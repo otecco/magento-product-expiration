@@ -1,4 +1,3 @@
 Shopix_ProductExpiration.xml    app/etc/modules/Shopix_ProductExpiration.xml
 code     app/code/local/Shopix/ProductExpiration
 design    app/design/base/default
-locale/en_US/Shopix_ProductExpiration.csv app/locale/en_US/Shopix_ProductExpiration.csv

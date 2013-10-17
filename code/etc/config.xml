@@ -58,16 +58,6 @@
     </global>
 
     <frontend>
-        <translate>
-            <modules>
-                <Shopix_ProductExpiration>
-                    <files>
-                        <default>Shopix_ProductExpiration.csv</default>
-                    </files>
-                </Shopix_ProductExpiration>
-            </modules>
-        </translate>
-
         <layout>
             <updates>
                 <shopix_productexpiration>
