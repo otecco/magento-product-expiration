@@ -1,0 +1,80 @@
+<?xml version="1.0"?>
+<config>
+
+    <modules>
+        <Shopix_ProductExpiration>
+            <version>1.0.0</version>
+        </Shopix_ProductExpiration>
+    </modules>
+
+    <global>
+        <helpers>
+            <productexpiration>
+                <class>Shopix_ProductExpiration_Helper</class>
+            </productexpiration>
+        </helpers>
+
+        <models>
+            <productexpiration>
+                <class>Shopix_ProductExpiration_Model</class>
+            </productexpiration>
+            <cataloginventory>
+                <rewrite>
+                    <stock_item>Shopix_ProductExpiration_Model_CatalogInventory_Stock_Item</stock_item>
+                </rewrite>
+            </cataloginventory>
+        </models>
+
+        <events>
+            <catalog_product_is_salable_after>
+                <observers>
+                    <shopix_productexpiration_catalog_product_is_salable_after>
+                        <type>singleton</type>
+                        <class>Shopix_ProductExpiration_Model_Observer</class>
+                        <method>catalogProductIsSalableAfter</method>
+                    </shopix_productexpiration_catalog_product_is_salable_after>
+                </observers>
+            </catalog_product_is_salable_after>
+        </events>
+
+        <sales>
+            <quote>
+                <item>
+                    <product_attributes>
+                        <expiry_date />
+                        <expiry_time />
+                    </product_attributes>
+                </item>
+            </quote>
+        </sales>
+
+        <resources>
+            <shopix_productexpiration_setup>
+                <setup>
+                    <module>Shopix_ProductExpiration</module>
+                </setup>
+            </shopix_productexpiration_setup>
+        </resources>
+    </global>
+
+    <frontend>
+        <translate>
+            <modules>
+                <Shopix_ProductExpiration>
+                    <files>
+                        <default>Shopix_ProductExpiration.csv</default>
+                    </files>
+                </Shopix_ProductExpiration>
+            </modules>
+        </translate>
+
+        <layout>
+            <updates>
+                <shopix_productexpiration>
+                    <file>productexpiration.xml</file>
+                </shopix_productexpiration>
+            </updates>
+        </layout>
+    </frontend>
+
+</config>

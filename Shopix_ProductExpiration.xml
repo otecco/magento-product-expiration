@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Shopix_ProductExpiration>
+            <active>true</active>
+            <codePool>local</codePool>
+            <depends></depends>
+        </Shopix_ProductExpiration>
+    </modules>
+</config>
