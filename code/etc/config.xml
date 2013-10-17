@@ -49,11 +49,12 @@
         </sales>
 
         <resources>
-            <shopix_productexpiration_setup>
+            <shopix_productexpiration>
                 <setup>
                     <module>Shopix_ProductExpiration</module>
+                    <class>Mage_Catalog_Model_Resource_Setup</class>
                 </setup>
-            </shopix_productexpiration_setup>
+            </shopix_productexpiration>
         </resources>
     </global>
 

@@ -1,3 +1,6 @@
 Shopix_ProductExpiration.xml    app/etc/modules/Shopix_ProductExpiration.xml
-code     app/code/local/Shopix/ProductExpiration
-design    app/design/base/default
+code     app/code/local/Shopix/ProductExpiration/
+design/layout/*    app/design/frontend/base/default/layout/
+design/template/*    app/design/frontend/base/default/template/
+skin/js/*    skin/frontend/base/default/js/
+skin/css/*    skin/frontend/base/default/css/

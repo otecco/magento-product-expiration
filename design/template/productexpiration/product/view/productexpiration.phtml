@@ -1,0 +1,8 @@
+<?php
+$_time_left = Mage::helper('productexpiration')->getProductTimeLeft($this->getProduct(), true);
+?>
+<?php if ($_time_left['expired']): ?>
+    <p class="timer hasCountdown"><span class="expired"><?php echo $this->__('Expired') ?></span></p>
+<?php else: ?>
+    <p class="timer" data-hour="<?php echo $_time_left['hour'] ?>" data-min="<?php echo $_time_left['min'] ?>" data-sec="<?php echo $_time_left['sec'] ?>"><?php echo $this->__('Expires in ') . sprintf('%s:%s', $_time_left['hour'], $_time_left['min']) ?></p>
+<?php endif; ?>
