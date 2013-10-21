@@ -98,15 +98,15 @@
                 <?php endif; ?>
                 <?php echo $this->getPriceHtml($_product, true) ?>
 
-                <?php $_time_left = Mage::helper('productexpiration')->getProductTimeLeft($_product, true); ?>
-                <?php if (! $_time_left['expired']): ?>
-                    <p class="timer" data-hour="<?php echo $_time_left['hour'] ?>" data-min="<?php echo $_time_left['min'] ?>" data-sec="<?php echo $_time_left['sec'] ?>"><?php echo $this->__('Expires in ') . sprintf('%s:%s', $_time_left['hour'], $_time_left['min']) ?></p>
-                <?php endif; ?>
-
                 <div class="actions">
+                    <?php $_time_left = Mage::helper('productexpiration')->getProductTimeLeft($_product, true); ?>
+                    <?php if (! is_null($_time_left) && ! $_time_left['expired']): ?>
+                        <p class="timer" data-hour="<?php echo $_time_left['hour'] ?>" data-min="<?php echo $_time_left['min'] ?>" data-sec="<?php echo $_time_left['sec'] ?>"><?php echo $this->__('Expires in ') . sprintf('%s:%s', $_time_left['hour'], $_time_left['min']) ?></p>
+                    <?php endif; ?>
+
                     <?php if($_product->isSaleable()): ?>
                         <button type="button" title="<?php echo $this->__('Add to Cart') ?>" class="button btn-cart" onclick="setLocation('<?php echo $this->getAddToCartUrl($_product) ?>')"><span><span><?php echo $this->__('Add to Cart') ?></span></span></button>
-                    <?php elseif ($_time_left['expired']): ?>
+                    <?php elseif (! is_null($_time_left) && $_time_left['expired']): ?>
                         <p class="timer hasCountdown"><span class="expired"><?php echo $this->__('Expired') ?></span></p>
                     <?php else: ?>
                         <p class="availability out-of-stock"><span><?php echo $this->__('Out of stock') ?></span></p>

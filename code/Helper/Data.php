@@ -20,6 +20,9 @@ class Shopix_ProductExpiration_Helper_Data extends Mage_Core_Helper_Abstract {
 
     public function getProductTimeLeft($product, $asArray = false)
     {  
+        if (! $product->hasExpiryDate())
+            return null;
+
         $d = strptime($product->getExpiryDate(), "%Y-%m-%d");
         $t = strptime($product->getAttributeText('expiry_time'), "%I:%M %p");
         $expiry = mktime($t['tm_hour'], $t['tm_min'], 0, $d['tm_mon'] + 1, $d['tm_mday'], $d['tm_year'] + 1900);

@@ -23,7 +23,9 @@ class Shopix_ProductExpiration_Model_Observer
     {  
         $salable = $observer->getSalable();
 
-        $salable->is_salable = (Mage::helper('productexpiration')->getProductTimeLeft($salable->product) > 0);
+        $time_left = Mage::helper('productexpiration')->getProductTimeLeft($salable->product);
+        if (! is_null($time_left))
+            $salable->is_salable = ($time_left > 0);
     }
 }
 
