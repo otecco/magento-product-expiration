@@ -16,3 +16,5 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
+.timer .countdown_amount { color: green; }
+.timer .expired { color: red; }
