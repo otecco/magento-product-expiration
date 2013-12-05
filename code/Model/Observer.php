@@ -1,4 +1,5 @@
-<?php /*
+<?php
+/*
     Shopix_ProductExpiration - Make product unavailable after a configured date and time
     Copyright (C) 2013 Shopix Pty Ltd (http://www.shopix.com.au)
 
@@ -14,8 +15,7 @@
 
     You should have received a copy of the GNU Affero General Public License
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
-*/ ?>
-<?php
+*/
 
 class Shopix_ProductExpiration_Model_Observer
 {
